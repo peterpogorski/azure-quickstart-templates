@@ -14,7 +14,7 @@
                 "Basic",
                 "Standard"
             ],
-            "defaultValue": "Basic"
+            "defaultValue": "Standard"
         },
         "adminUserName": {
             "type": "string",
@@ -139,6 +139,14 @@
         }
     ],
     "outputs": {
+        "serviceFabricExplorer": {
+            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).httpGatewayConnectionPort)]",
+            "type": "string"
+        },
+        "clientConnectionEndpoint": {
+            "value": "[concat(reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).clientConnectionPort)]",
+            "type": "string"
+        },
         "clusterProperties": {
             "value": "[reference(parameters('clusterName'))]",
             "type": "object"
