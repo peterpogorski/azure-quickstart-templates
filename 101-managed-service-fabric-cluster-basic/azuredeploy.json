@@ -106,11 +106,11 @@
     ],
     "outputs": {
          "serviceFabricExplorer": {
-            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).httpGatewayConnectionPort)]",
+            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, ':', reference(parameters('clusterName')).httpGatewayConnectionPort)]",
             "type": "string"
         },
         "clientConnectionEndpoint": {
-             "value": "[concat(reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).clientConnectionPort)]",
+             "value": "[concat(reference(parameters('clusterName')).fqdn, ':', reference(parameters('clusterName')).clientConnectionPort)]",
              "type": "string"
         },
         "clusterProperties": {

@@ -20,13 +20,13 @@
         "nodeType1Name": {
             "value": "GEN-UNIQUE"
         },
-        "nodeType1vmSize": {
+        "nodeType1VmSize": {
             "value": "Standard_D2_v2"
         },
-        "nodeType1vmInstanceCount": {
+        "nodeType1VmInstanceCount": {
             "value": 5
         },
-        "nodeType1dataDiskSizeGB": {
+        "nodeType1DataDiskSizeGB": {
             "value": 120
         },
         "vmImagePublisher": {

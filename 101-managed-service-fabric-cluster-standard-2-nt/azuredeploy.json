@@ -29,30 +29,30 @@
         "nodeType1Name": {
             "type": "string"
         },
-        "nodeType1vmSize": {
+        "nodeType1VmSize": {
             "type": "string",
             "defaultValue": "Standard_D2_v2"
         },
-        "nodeType1vmInstanceCount": {
+        "nodeType1VmInstanceCount": {
             "type": "int",
             "defaultValue": 5
         },
-        "nodeType1dataDiskSizeGB": {
+        "nodeType1DataDiskSizeGB": {
             "type": "int",
             "defaultValue": 120
         },
         "nodeType2Name": {
             "type": "string"
         },
-        "nodeType2vmSize": {
+        "nodeType2VmSize": {
             "type": "string",
             "defaultValue": "Standard_D2_v2"
         },
-        "nodeType2vmInstanceCount": {
+        "nodeType2VmInstanceCount": {
             "type": "int",
             "defaultValue": 3
         },
-        "nodeType2dataDiskSizeGB": {
+        "nodeType2DataDiskSizeGB": {
             "type": "int",
             "defaultValue": 120
         },
@@ -66,7 +66,7 @@
         },
         "vmImageSku": {
             "type": "string",
-            "defaultValue": "2016-Datacenter"
+            "defaultValue": "2019-Datacenter"
         },
         "vmImageVersion": {
             "type": "string",
@@ -113,9 +113,9 @@
                 "vmImageOffer": "[parameters('vmImageOffer')]",
                 "vmImageSku": "[parameters('vmImageSku')]",
                 "vmImageVersion": "[parameters('vmImageVersion')]",
-                "vmSize": "[parameters('nodeType1vmSize')]",
-                "vmInstanceCount": "[parameters('nodeType1vmInstanceCount')]",
-                "dataDiskSizeGB": "[parameters('nodeType1dataDiskSizeGB')]"
+                "vmSize": "[parameters('nodeType1VmSize')]",
+                "vmInstanceCount": "[parameters('nodeType1VmInstanceCount')]",
+                "dataDiskSizeGB": "[parameters('nodeType1DataDiskSizeGB')]"
             }
         },
         {
@@ -132,19 +132,19 @@
                 "vmImageOffer": "[parameters('vmImageOffer')]",
                 "vmImageSku": "[parameters('vmImageSku')]",
                 "vmImageVersion": "[parameters('vmImageVersion')]",
-                "vmSize": "[parameters('nodeType2vmSize')]",
-                "vmInstanceCount": "[parameters('nodeType2vmInstanceCount')]",
-                "dataDiskSizeGB": "[parameters('nodeType2dataDiskSizeGB')]"
+                "vmSize": "[parameters('nodeType2VmSize')]",
+                "vmInstanceCount": "[parameters('nodeType2VmInstanceCount')]",
+                "dataDiskSizeGB": "[parameters('nodeType2DataDiskSizeGB')]"
             }
         }
     ],
     "outputs": {
         "serviceFabricExplorer": {
-            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).httpGatewayConnectionPort)]",
+            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, ':', reference(parameters('clusterName')).httpGatewayConnectionPort)]",
             "type": "string"
         },
         "clientConnectionEndpoint": {
-            "value": "[concat(reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).clientConnectionPort)]",
+            "value": "[concat(reference(parameters('clusterName')).fqdn, ':', reference(parameters('clusterName')).clientConnectionPort)]",
             "type": "string"
         },
         "clusterProperties": {

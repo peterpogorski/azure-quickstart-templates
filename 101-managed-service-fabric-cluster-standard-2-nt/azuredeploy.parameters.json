@@ -20,25 +20,25 @@
         "nodeType1Name": {
             "value": "GEN-UNIQUE"
         },
-        "nodeType1vmSize": {
+        "nodeType1VmSize": {
             "value": "Standard_D2_v2"
         },
-        "nodeType1vmInstanceCount": {
+        "nodeType1VmInstanceCount": {
             "value": 5
         },
-        "nodeType1dataDiskSizeGB": {
+        "nodeType1DataDiskSizeGB": {
             "value": 120
         },
         "nodeType2Name": {
             "value": "GEN-UNIQUE"
         },
-        "nodeType2vmSize": {
+        "nodeType2VmSize": {
             "value": "Standard_D2_v2"
         },
-        "nodeType2vmInstanceCount": {
+        "nodeType2VmInstanceCount": {
             "value": 3
         },
-        "nodeType2dataDiskSizeGB": {
+        "nodeType2DataDiskSizeGB": {
             "value": 120
         },
         "vmImagePublisher": {
