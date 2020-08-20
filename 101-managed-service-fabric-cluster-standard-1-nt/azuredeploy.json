@@ -26,8 +26,20 @@
         "clientCertificateThumbprint": {
             "type": "string"
         },
-        "nodeTypeName": {
+        "nodeType1Name": {
             "type": "string"
+        },
+        "nodeType1vmSize": {
+            "type": "string",
+            "defaultValue": "Standard_D2_v2"
+        },
+        "nodeType1vmInstanceCount": {
+            "type": "int",
+            "defaultValue": 5
+        },
+        "nodeType1dataDiskSizeGB": {
+            "type": "int",
+            "defaultValue": 120
         },
         "vmImagePublisher": {
             "type": "string",
@@ -39,23 +51,11 @@
         },
         "vmImageSku": {
             "type": "string",
-            "defaultValue": "2019-Datacenter"
+            "defaultValue": "2016-Datacenter"
         },
         "vmImageVersion": {
             "type": "string",
             "defaultValue": "latest"
-        },
-        "vmSize": {
-            "type": "string",
-            "defaultValue": "Standard_D2_v2"
-        },
-        "vmInstanceCount": {
-            "type": "int",
-            "defaultValue": 3
-        },
-        "dataDiskSizeGB": {
-            "type": "int",
-            "defaultValue": 120
         }
     },
     "variables": {
@@ -87,7 +87,7 @@
         {
             "apiVersion": "[variables('sfApiVersion')]",
             "type": "Microsoft.ServiceFabric/managedclusters/nodetypes",
-            "name": "[concat(parameters('clusterName'), '/', parameters('nodeTypeName'))]",
+            "name": "[concat(parameters('clusterName'), '/', parameters('nodeType1Name'))]",
             "location": "[resourcegroup().location]",
             "dependsOn": [
               "[concat('Microsoft.ServiceFabric/managedclusters/', parameters('clusterName'))]"
@@ -98,21 +98,14 @@
                 "vmImageOffer": "[parameters('vmImageOffer')]",
                 "vmImageSku": "[parameters('vmImageSku')]",
                 "vmImageVersion": "[parameters('vmImageVersion')]",
-                "vmSize": "[parameters('vmSize')]",
-                "vmInstanceCount": "[parameters('vmInstanceCount')]",
-                "dataDiskSizeGB": "[parameters('dataDiskSizeGB')]"
+                "vmSize": "[parameters('nodeType1vmSize')]",
+                "vmInstanceCount": "[parameters('nodeType1vmInstanceCount')]",
+                "dataDiskSizeGB": "[parameters('nodeType1dataDiskSizeGB')]"
             }
         }
     ],
     "outputs": {
-         "serviceFabricExplorer": {
-            "value": "[concat('https://', reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).httpGatewayConnectionPort)]",
-            "type": "string"
-        },
-        "clientConnectionEndpoint": {
-             "value": "[concat(reference(parameters('clusterName')).fqdn, reference(parameters('clusterName')).clientConnectionPort)]",
-             "type": "string"
-        },
+        
         "clusterProperties": {
             "value": "[reference(parameters('clusterName'))]",
             "type": "object"
