@@ -4,6 +4,7 @@
     "parameters": {
         "clusterName": {
             "type": "string",
+            "maxLength": 9,
             "metadata": {
                 "description": "Name of your cluster - Between 3 and 23 characters. Letters and numbers only"
             }
@@ -27,7 +28,8 @@
             "type": "string"
         },
         "nodeTypeName": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "myNodeType"
         },
         "vmImagePublisher": {
             "type": "string",
