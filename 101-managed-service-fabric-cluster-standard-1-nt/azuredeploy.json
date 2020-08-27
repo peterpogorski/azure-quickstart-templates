@@ -4,7 +4,8 @@
     "parameters": {
         "clusterName": {
             "type": "string",
-            "maxLength": 9,
+            "minLength": 4,
+            "maxLength": 23,
             "metadata": {
                 "description": "Name of your cluster - Between 3 and 23 characters. Letters and numbers only"
             }
@@ -29,7 +30,8 @@
         },
         "nodeType1Name": {
             "type": "string",
-            "defaultValue": "myNodeType1"
+            "maxLength": 9,
+            "defaultValue": "NT1"
         },
         "nodeType1VmSize": {
             "type": "string",
