@@ -18,7 +18,7 @@
             "value": "GEN-SF-CERT-THUMBPRINT"
         },
         "nodeType1Name": {
-            "value": "myNodeType1"
+            "value": "NT1"
         },
         "nodeType1VmSize": {
             "value": "Standard_D2_v2"

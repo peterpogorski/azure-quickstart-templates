@@ -18,7 +18,7 @@
             "value": "GEN-SF-CERT-THUMBPRINT"
         },
         "nodeTypeName": {
-            "value": "myNodeType"
+            "value": "NT1"
         },
         "vmImagePublisher": {
             "value": "MicrosoftWindowsServer"
