@@ -85,20 +85,6 @@
                         "isAdmin" : true,
                         "thumbprint" : "[parameters('clientCertificateThumbprint')]"
                     }
-                ],
-                "loadBalancingRules": [
-                    {
-                        "fronendPort": 8080, 
-                        "backendPort": 8080,
-                        "protocol": "tcp",
-                        "probeProtocol": "tcp"
-                    },
-                    {
-                        "frontendPort": 8081,
-                        "backendPort": 8081,
-                        "protocol": "tcp",
-                        "probeProtocol": "tcp"
-                    }
                 ]
             }
         },
